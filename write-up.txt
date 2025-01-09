@@ -1,0 +1,46 @@
+Sections A through E are found in the code files.
+
+Section F - Justify the package delivery algorithm:
+
+    1 - Two strengths:
+        - Greedy Heuristic Approach: This is efficient for reducing travel time and total distance
+        - Flexibility and Simplicity: Unlike a brute force approach or anything similar, this can be much easier to add specific package constraints and still scale it up really high, whereas other methods would fail when put up to much rigor.
+
+    2 - Does algorithm fulfill requirements?
+        - On-Time Delivery of Packages: yes, all packages with deadlines are delivered before their deadlines.
+        - Keeping Total Distance Under 140 Miles: yes, the final distance traveled using this algorithm is under 140 miles
+        - Multiple Trucks and Drivers: Yes, this function was made keeping in mind the use of 3 trucks and 2 drivers and can even adapt to more
+        - Real-Time Tracking: yes, this algorithm updates the statuses of packages in real time
+
+    3 - Two alternative algorithms:
+        - Brute force: Using brute force will have a more optimal route, in fact, the very most optimal route. It's drawback however is that it will fail when it comes to handling flexibility and large quantites of packages, making it extremely unviable.
+        - Dijkstra's Algorithm: While knn is step by step, this algorithm looks at the route as a whole resulting in a more optimal approach. However this solution isn not as simple and will require more computation up front.
+
+Section G - Describe what you would do differently, if you did this project again:
+    
+    - I would try and implement a way to programically assign the packages to each truck based on the restrictions provided in the notes rather than doing it manually. What this will allow the program to accomplsih is be completely able to handle these route
+    scenarios and problems without any intervention of workers besides the truck drivers. as it sytands right now, someone is needed to assign and load the trucks.
+
+Section H - Verify that the data structure used in the solution meets all requirements in the scenario.
+
+    1 - requirements:
+    - Efficient Lookup of Distances: The adjacency matrix provides constant time, O(1), lookup for distances between any two locations
+    - Fixed Number of Locations: In the scenario, the number of delivery locations is fixed and known in advance, making an adjacency matrix feasible and compatible with the algorithm I used.
+    - Multiple Cities: A new matrix can easily be created and filled for new cities in case WGUPS expands.
+    - Relational - Using the address and zip codes, I was able to find every package assigned to that location making a matrix relational with the hash table I created.
+
+    2 - alternative data structures:
+    - Adjacency List - The adjacency list is more space-efficient than an adjacency matrix but is less time-efficient. Unlike the constant O(1) lookup, a adjacency list has an O(n) lookup, where n are the neighnoring nodes.
+    - Distance Dictionary - Similar in space complexity as an adjaceney matrix but doesn't force storing of unused cells, making it better. This also has a similar time complexity as an adjacency matrix however its more complex and harder to manage than a matrix. Personally its also hard to visualize this structure and I would prefer the adjacency matrix more.
+
+Section I - References and Sources:
+
+              -	https://learn.zybooks.com/zybook/WGUC950Template2023	
+
+              - https://tspvis.com/
+
+              - https://github.com/bradtraversy/traversy-js-challenges/blob/main/06-hash-tables-maps-sets/02-hash-table-intro/readme.md
+
+              - https://www.geeksforgeeks.org/k-nearest-neighbours/
+
+              - https://www.freecodecamp.org/news/greedy-algorithms/
